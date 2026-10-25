@@ -1,0 +1,429 @@
+:root{
+    --main-color: rgb(50, 214, 214)
+
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "work sans","sans-serif";
+    overflow-x: hidden;
+}
+.parent {
+    background-color: rgb(163, 195, 222)
+   
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+     width: 600px;   
+   
+}
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+/* 2. الهواتف الكبيرة جداً / التابلت الصغير (بداية من 576px) */
+@media (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+}
+@media (min-width:768px) {
+    .container{
+        width:750px;
+    }
+}
+@media (min-width:992px) {
+    .container{
+        width:970px;
+    }
+}
+@media (min-width:1200px) {
+    .container{
+        width:970px;
+    }
+}
+/* start header */
+.header{
+    padding: 20px;
+}
+.header .container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    width: 60px;
+}
+.header .links{
+    position: relative;
+}
+.header .links:hover .icon span:nth-child(2){
+    width: 100%;
+    
+}
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: flex-end;
+}
+.header .links .icon span {
+    background-color:black ;
+    margin-bottom:5px ;
+    height: 2px;
+}
+.header .links .icon span:first-child {
+ height: 3px;
+ width: 100%;
+}
+.header .links .icon span:nth-child(2){
+ height: 3px;
+ width: 60%;
+ transition: 0.3s;
+}
+.header .links .icon span:nth-child(3){
+ height: 3px;
+ width: 100%;
+}
+.header .links ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ background-color:rgb(212, 210, 210);
+ position: absolute;
+ right: 0;
+ min-width: 200px;
+ top:calc(100% + 15px );
+ display: none;
+ z-index: 1;
+
+}
+.header .links:hover ul{
+    display: block;
+}
+.header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color:transparent transparent rgb(219, 219, 219) transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+.header .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration:none;
+    color: black;
+    transition: 0.3s;
+}
+.header .links ul li a:hover {
+    padding-left: 25px;
+    color: rgb(207, 50, 50);
+}
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+/* last header */
+.landing{
+    background-image: url(../photos/view-from-bears-hump.jpg);
+   background-size: cover;
+   height: 600px;
+
+}
+.landing .intro-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.landing .intro-text h1{
+    margin:0;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+.landing .intro-text p{
+    font-size: 19px;
+    line-height: 1.8;
+    text-align: center;
+    /* start features */
+}
+.features {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: rgb(194, 197, 200);
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap:20px
+}
+.features .feat {
+    padding: 20px;
+    text-align: center;
+}
+.features .feat i {
+    color: var(--main-color);
+    font-size: 35px;
+   
+}
+.features .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+
+}
+.features .feat p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+/* start services */
+.services .container .special-heading {
+    font-size: 100px;
+    color: rgb(192, 198, 204);
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.services .container p{
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width: 767px) {
+    .special-heading {
+      font-size: 60px;
+    }
+    .special-heading + p{
+        margin-top: -20px;
+    }         
+}
+.services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.services .container .service-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap:30px
+  
+}
+.services .container .service-content  .srv .text p{
+    margin: 0;
+    text-align: left;
+}
+.services .container .service-content .col .srv {
+  margin-top: 10px; 
+  display: flex;
+  margin-bottom: 40px;
+}
+.services .container .service-content .srv  i {
+    margin-left: 0px;
+    font-size: 25px;
+    color: var(--main-color);
+}
+.services .container .service-content .col .image {
+    width: 230px;
+    margin-top: 10px;
+}
+.services .container .service-content {
+    margin-right: 15px;
+   
+}
+.services .container .pw{
+    margin-bottom: 25px;
+}
+@media(max-width:767px){
+    .services .service-content .srv{
+        flex-direction: column;
+        text-align: center;
+    }
+   
+}
+.services .container .service-content  .srv .text {
+    flex: 1;
+}
+.services .container .service-content .col .image img{
+    text-align: center;
+    position: relative;
+    width: 260px;
+}
+.services .container .service-content .col .image img::before {
+    content: "";
+    position: absolute;
+    background-color:blue ;
+    width: 100px;
+    height:calc(100% + 100px);
+    top: -50px;
+    right: 0;
+    z-index: 1;
+}
+@media (max-width: 1199px) {
+   .image-column {
+    display: none;
+   }
+}
+/* start potofolio */
+.portfolio{
+    padding-top:60px;
+    padding-bottom: 60px;
+    background-color: rgb(219, 221, 223);
+    
+}
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(271px,1fr));
+    grid-gap:30px;
+    margin-top: 80px;
+}
+.portfolio .portfolio-content .card {
+    background-color: white;
+    border-radius: 10px;
+    width:300px;
+}
+.portfolio .portfolio-content .card img {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.portfolio .portfolio-content .card .info {
+    padding: 15px;
+}
+.portfolio .portfolio-content .card .info h3 {
+    margin: 0;
+}
+.portfolio .portfolio-content .card .info p {
+    padding-top: 35px;
+    margin: -20px -1 11px 15px ;
+    text-align: left;
+}
+/* end portfolio */
+/* start about */
+.about{
+    padding-top:60px;
+    padding-bottom: 120px
+}
+.about .about-content{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+}
+.about .about-content .image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+.about .about-content .image::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(152, 147, 147);
+    width: 100px;
+    height:calc(100% + 25px) ;
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.about .about-content .image img {
+    max-width: 100%;
+}
+.about .about-content .image::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 60px solid var(--main-color);
+    border-bottom: 60px solid var(--main-color);
+    top: -40px;
+    right: -145px;
+    z-index: -1;
+}
+.about .about-content .text {
+    flex-basis: calc(100% - 500px);
+}
+.about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.about .about-content .text p:last-of-type {
+   line-height: 1.8;
+    color: rgb(152, 152, 152);
+}
+.about .about-content .text hr {
+    width: 50%;
+    border-color: var(--main-color);
+    margin-bottom: 40px;
+}
+/* end about */
+/* srart contact */
+.contact{
+    padding-top:60px;
+    padding-bottom: 60px;
+    background-color: rgb(219, 221, 223);
+}
+.contact .info{
+    padding-top:60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+.contact .info .label {
+    font-size: 30px;
+    font-weight: 800;
+    color:black ;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+}
+.contact .info .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.contact .info .social i {
+    margin-left: 10px;
+    color:blue;
+}
+/* end contact */
+.footer{
+    background: rgb(11, 43, 41);
+    height:75px;
+    margin-bottom: -60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+}
+.footer span {
+    margin-left: 8px;
+    margin-right: 8px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
